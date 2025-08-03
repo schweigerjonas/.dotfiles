@@ -198,5 +198,16 @@ bar {
 # Add gaps between windows/containers
 gaps inner 5px
 
-# Load wallpaper when on starting i3
+# Assign applications to workspaces
+assign [class="^firefox"] $ws1
+assign [class="^Gnome-terminal"] $ws2
+
+# Autostart apps on specific workspaces
+exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
+exec --no-startup-id i3-msg "workspace $ws2; exec gnome-terminal"
+
+# Automatically create and apply monitor resolution settings
+exec --no-startup-id ~/.config/i3/scripts/monitor.sh
+
+# Load wallpaper when on i3 startup 
 exec_always nitrogen --restore
