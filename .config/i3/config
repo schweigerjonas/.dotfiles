@@ -201,12 +201,12 @@ gaps inner 5px
 # Assign applications to workspaces
 assign [class="^firefox"] $ws1
 assign [class="^Gnome-terminal"] $ws2
-assign [class="^todoist"] $ws8
+# assign [class="^todoist"] $ws8
 
 # Autostart apps on specific workspaces
 exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
 exec --no-startup-id i3-msg "workspace $ws2; exec gnome-terminal"
-exec --no-startup-id i3-msg "workspace $ws8; exec todoist"
+# exec --no-startup-id i3-msg "workspace $ws8; exec todoist"
 
 # Automatically create and apply monitor resolution settings
 exec --no-startup-id ~/.config/i3/scripts/monitor.sh
