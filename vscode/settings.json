@@ -1,0 +1,63 @@
+{
+  "debug.terminal.clearBeforeReusing": true,
+  "workbench.colorTheme": "Default Dark+",
+  "window.restoreWindows": "none",
+  "editor.wordWrap": "on",
+  "editor.lineNumbers": "relative",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    //NAVIGATION
+    //switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    }
+  ],
+  // Enables native VSCode file search
+  "vim.handleKeys": {
+    "<C-p>": false
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "cSpell.userWords": ["schweigerjonas"],
+  "prettier.configPath": ".prettierrc",
+  "cSpell.language": "en,de",
+  "redhat.telemetry.enabled": false,
+  "workbench.startupEditor": "none",
+  "java.saveActions.organizeImports": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
