@@ -152,4 +152,4 @@ function fzm() {
 source <(ng completion script)
 
 # Customize prompt string
-export PS1='\[\e[1m\]\[\e[92m\]\u@\h:\[\e[94m\]\W\[\e[91m\]$(__git_ps1)\[\e[0m\]\$ '
+export PS1='\[\e[1m\]\[\e[92m\]\u@\h:\[\e[94m\]\w\[\e[91m\]$(__git_ps1)\[\e[0m\]\$ '
