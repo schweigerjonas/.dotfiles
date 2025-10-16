@@ -133,3 +133,23 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set up fzf key bindings and fuzzy completion
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# fzf environment variables
+export FZF_DEFAULT_COMMAND='find . -type f ! -path "*git*"'
+export FZF_DEFAULT_OPTS='-i --height=50%'
+
+# Create list of directories and change into selected
+function fzd() {
+  cd "$(find . -type d | fzf)"
+}
+
+# Create list of files and open it in nvim
+function fzm() {
+  vim "$(find -type f | fzf -m)"
+}
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# Customize prompt string
+export PS1='\[\e[1m\]\[\e[92m\]\u@\h:\[\e[94m\]\W\[\e[91m\]$(__git_ps1)\[\e[0m\]\$ '
