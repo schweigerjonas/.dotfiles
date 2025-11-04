@@ -155,6 +155,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# lock screen for short breaks and to not interrupt running processes
+bindsym $mod+Shift+i exec i3lock
+# lock screen and suspend for long breaks like overnight
+bindsym $mod+Shift+s exec "i3lock && systemctl suspend"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
