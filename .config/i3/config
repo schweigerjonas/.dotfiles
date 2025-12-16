@@ -196,7 +196,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     status_command python3 ~/bumblebee-status/bumblebee-status \
-      -m network pulseout battery datetime \
+      -m battery cpu memory network pulseout datetime \
       -p datetime.format="%a %d, %b %H:%M" \
       -t iceberg-contrast
 
