@@ -1,0 +1,67 @@
+* {
+    /* Iceberg Palette */
+    bg:           #161821;
+    bg-alt:       #161922;
+    fg:           #EFEFEF;
+    blue:         #84a0c6;
+    grey:         #6b7089;
+    
+    background-color: transparent;
+    text-color:       @fg;
+    font:            "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    width:            600px;
+    background-color: @bg;
+    border-color:     @blue; 
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 0px;
+}
+
+/* --- Input Bar --- */
+inputbar {
+    padding:          12px;
+    background-color: @bg-alt;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color:       @blue;
+    padding:          0px 8px 0px 4px;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @grey;
+    text-color:        @fg;
+}
+
+/* --- List View --- */
+listview {
+    lines:      8;
+    columns:    1;
+    fixed-height: true;
+    padding:    8px 0px;
+}
+
+element {
+    padding:    8px 16px;
+    spacing:    12px;
+}
+
+element normal active {
+    text-color: @blue;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color:       @blue;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

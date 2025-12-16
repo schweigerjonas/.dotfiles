@@ -1,9 +1,7 @@
 configuration {
   modes: "run,window,combi";
-  icon-theme: "Oranchelo";
-  show-icons: true;
 	terminal: "rofi-sensible-terminal";
-  drun-display-format: "{icon} {name}";
+  drun-display-format: "{name}";
   location: 0;
   disable-history: false;
   hide-scrollbar: true;
@@ -13,4 +11,4 @@ configuration {
   sidebar-mode: true;
 }
 
-@theme "catppuccin-mocha"
+@theme "iceberg-contrast"
