@@ -1,0 +1,22 @@
+#!/bin/bash
+
+OUTPUT_MONITOR="DP-1"
+OUTPUT_DISPLAY="eDP-1"
+TARGET_RES="3440x1440"
+REFRESH_RATE="120"
+
+if xrandr | grep "$OUTPUT_MONITOR connected"; then
+  # turn on external monitor with full resolution and max refresh rate
+  xrandr --output "$OUTPUT_MONITOR" --mode "$TARGET_RES" --rate "$REFRESH_RATE" --primary --auto
+
+  # turn off laptop monitor (-> moves all workspaces to $OUTPUT_MONITOR)
+  xrandr --output "$OUTPUT_DISPLAY" --off
+fi
+
+if xrandr | grep "$OUTPUT_MONITOR disconnected"; then
+  # turn on display if no monitor is connected
+  xrandr --output "$OUTPUT_DISPLAY" --primary --auto
+
+  # turn off monitor explicitly
+  xrandr --output "$OUTPUT_MONITOR" --off
+fi
