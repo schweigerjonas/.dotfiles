@@ -113,6 +113,9 @@ fi
 # Neovim installation
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
+# Flatpak launchers
+export PATH="$PATH:/var/lib/flatpak/exports/bin"
+
 # Golang installation
 export PATH="$PATH:/usr/local/go/bin"
 
