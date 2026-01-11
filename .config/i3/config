@@ -215,7 +215,8 @@ gaps inner 5px
 # assign [class="^todoist"] $ws8
 
 # Autostart apps on specific workspaces
-exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
+# exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
+exec --no-startup-id i3-msg "workspace $ws1; exec flatpak run app.zen_browser.zen"
 exec --no-startup-id i3-msg "workspace $ws2; exec gnome-terminal"
 
 # Automatically apply monitor settings on refresh
