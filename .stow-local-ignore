@@ -14,3 +14,9 @@
 
 # Stow ignore
 ^\.stow-local-ignore$
+
+# Keyd configuration 
+^keyd$
+
+# VSCode settings
+^vscode$
