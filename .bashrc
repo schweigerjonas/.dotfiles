@@ -123,7 +123,7 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Path for utility scripts
-export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/.config/scripts:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
