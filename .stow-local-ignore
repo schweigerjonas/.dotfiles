@@ -1,0 +1,16 @@
+# Git metadata
+^\.git$
+^\.gitignore$
+^\.gitmodules$
+
+# Git docs
+^README.*
+^LICENSE.*
+^COPYING.*
+
+# Vim/Emacs swap and backup files
+.*~$
+^.*\.swp$
+
+# Stow ignore
+^\.stow-local-ignore$
