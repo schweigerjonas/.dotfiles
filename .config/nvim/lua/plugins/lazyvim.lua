@@ -3,5 +3,8 @@ return {
   {
     "LazyVim/LazyVim",
     version = "^14",
+    opts = {
+      colorscheme = "tokyonight",
+    },
   },
 }
