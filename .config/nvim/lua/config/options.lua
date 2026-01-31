@@ -7,3 +7,5 @@ vim.opt.scrolloff = 10
 
 -- Maximum number of characters before linebreak
 vim.opt.textwidth = 100
+
+vim.g.lazyvim_picker = "telescope"
