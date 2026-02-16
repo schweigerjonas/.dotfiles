@@ -225,4 +225,4 @@ exec --no-startup-id i3-msg "workspace $ws2; exec kitty"
 exec_always --no-startup-id ~/.config/i3/scripts/monitor
 
 # Load wallpaper when on i3 startup 
-exec_always nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
