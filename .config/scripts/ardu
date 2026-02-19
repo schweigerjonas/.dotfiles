@@ -7,4 +7,10 @@ else
   echo "sketch: $1"
   arduino-cli compile --fqbn arduino:avr:uno "$1"
   arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno "$1"
+
+  if [ "$2" == "" ]; then
+    echo "Enter baudrate to monitor serial monitor output."
+  else
+    arduino-cli monitor -p /dev/ttyACM0 -c baudrate="$2"
+  fi
 fi
