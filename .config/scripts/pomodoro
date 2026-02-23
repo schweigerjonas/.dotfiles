@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Requires https://github.com/caarlos0/timer to be installed
+
+declare -A pomo_options
+pomo_options["work"]="50"
+pomo_options["break"]="10"
+
+pomodoro() {
+  if [[ -n "$1" && -n "${pomo_options["$1"]}" ]]; then
+    val="$1"
+
+    timer "${pomo_options["$1"]}m"
+    spd-say "'$val' session done"
+    notify-send "'$val' session done"
+  fi
+}
+
+# execute pomodoro function when argument is passed to the script
+if [[ -n "$1" ]]; then
+  pomodoro "$1"
+else
+  echo "Usage: pomodoro [work|break]"
+fi

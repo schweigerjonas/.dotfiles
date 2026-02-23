@@ -7,3 +7,7 @@ alias rm="rm -I"
 
 # Arduino CLI
 alias ard="arduino-cli"
+
+# Pomodoro script
+alias wo="pomodoro 'work'"
+alias br="pomodoro 'break'"
