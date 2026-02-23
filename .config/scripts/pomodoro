@@ -9,6 +9,7 @@ pomo_options["break"]="10"
 pomodoro() {
   if [[ -n "$1" && -n "${pomo_options["$1"]}" ]]; then
     val="$1"
+    echo "$val"
 
     timer "${pomo_options["$1"]}m"
     spd-say "'$val' session done"
