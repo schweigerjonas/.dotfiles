@@ -222,7 +222,7 @@ exec --no-startup-id i3-msg "workspace $ws1; exec flatpak run app.zen_browser.ze
 exec --no-startup-id i3-msg "workspace $ws2; exec kitty"
 
 # Automatically apply monitor settings on refresh
-exec_always --no-startup-id ~/.config/i3/scripts/monitor
+exec --no-startup-id ~/.config/i3/scripts/monitor
 
 # Load wallpaper when on i3 startup 
 exec_always --no-startup-id nitrogen --restore
