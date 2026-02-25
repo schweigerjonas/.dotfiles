@@ -24,9 +24,13 @@ notified=0
 while true; do
   battery0_status=$(cat /sys/class/power_supply/BAT0/status)
   battery0_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+  battery1_status=$(cat /sys/class/power_supply/BAT1/status)
+  battery1_capacity=$(cat /sys/class/power_supply/BAT1/capacity)
 
   echo $battery0_status
   echo $battery0_capacity
+  echo $battery1_status
+  echo $battery1_capacity
   echo $notified
 
   if [[ "$battery0_status" -eq "Discharging" ]]; then
@@ -41,6 +45,29 @@ while true; do
       sleep $backup_duration
 
       temp_status=$(cat /sys/class/power_supply/BAT0/status)
+      # if laptop wasn't plugged in within backup_duration, perform critical_action
+      if [[ "$temp_status" -eq "Discharging" ]]; then
+        cmd="systemctl $critical_action"
+        eval "$cmd"
+      else
+        notified=0
+      fi
+    fi
+  else
+    notified=0
+  fi
+  if [[ "$battery1_status" -eq "Discharging" ]]; then
+    if [ "$battery1_capacity" -le "$battery_low_threshold" ] && [ "$battery1_capacity" -gt "$battery_critical_threshold" ] && [ "$notified" -eq 0 ]; then
+      notify-send "Battery Low" 'Plug In to Recharge' --icon=/usr/share/icons/gnome/32x32/status/battery-low.png --urgency=normal --expire-time=120000
+      notified=1
+    elif [[ "$battery1_capacity" -le "$battery_critical_threshold" ]]; then
+      temp_time=$((backup_duration * 1000))
+      notify-send "Battery almost empty, system will be turned off in $backup_duration sec(s)" 'Backup Data or Plug In to Recharge' --icon=/usr/share/icons/gnome/32x32/status/battery-empty.png --urgency=critical --expire-time=$temp_time
+      notified=1
+
+      sleep $backup_duration
+
+      temp_status=$(cat /sys/class/power_supply/BAT1/status)
       # if laptop wasn't plugged in within backup_duration, perform critical_action
       if [[ "$temp_status" -eq "Discharging" ]]; then
         cmd="systemctl $critical_action"
