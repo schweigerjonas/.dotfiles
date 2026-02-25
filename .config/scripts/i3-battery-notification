@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# thresholds at which to send notifications
+battery_low_threshold=20
+battery_critical_threshold=10
+
+# duration until critical action in performed once critical battery threshold is reached
+# (in s)
+backup_duration=30
+
+# action performed after critical battery threshold is reached and no charging cable is plugged in
+# during specified backup_duration
+critical_action="suspend"
+
+# duration between battery level checks
+# (in s)
+sleep_duration=60
+
+# checks whether notification has already been sent; prevents notifications from being sent after
+# every sleep_duration when threshold has been reached
+notified=0
+
+# batteries can be in following statuses: Full, Charging, Not charging, Discharging
+while true; do
+  battery0_status=$(cat /sys/class/power_supply/BAT0/status)
+  battery0_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+
+  echo $battery0_status
+  echo $battery0_capacity
+  echo $notified
+
+  if [[ "$battery0_status" -eq "Discharging" ]]; then
+    if [ "$battery0_capacity" -le "$battery_low_threshold" ] && [ "$battery0_capacity" -gt "$battery_critical_threshold" ] && [ "$notified" -eq 0 ]; then
+      notify-send "Battery Low" 'Plug In to Recharge' --icon=battery-low --urgency=normal
+      notified=1
+    elif [[ "$battery0_capacity" -le "$battery_critical_threshold" ]]; then
+      temp_time=$((backup_duration * 1000))
+      notify-send "Battery almost empty, system will be turned off in $backup_duration sec(s)" 'Backup Data or Plug In to Recharge' --icon=battery-empty --urgency=critical --expire-time=$temp_time
+      notified=1
+
+      sleep $backup_duration
+
+      temp_status=$(cat /sys/class/power_supply/BAT0/status)
+      # if laptop wasn't plugged in within backup_duration, perform critical_action
+      if [[ "$temp_status" -eq "Discharging" ]]; then
+        cmd="systemctl $critical_action"
+        eval "$cmd"
+      else
+        notified=0
+      fi
+    fi
+  else
+    notified=0
+  fi
+
+  sleep $sleep_duration
+done
+
+exit 0
