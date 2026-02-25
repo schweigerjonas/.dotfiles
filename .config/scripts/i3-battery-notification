@@ -31,11 +31,11 @@ while true; do
 
   if [[ "$battery0_status" -eq "Discharging" ]]; then
     if [ "$battery0_capacity" -le "$battery_low_threshold" ] && [ "$battery0_capacity" -gt "$battery_critical_threshold" ] && [ "$notified" -eq 0 ]; then
-      notify-send "Battery Low" 'Plug In to Recharge' --icon=battery-low --urgency=normal
+      notify-send "Battery Low" 'Plug In to Recharge' --icon=/usr/share/icons/gnome/32x32/status/battery-low.png --urgency=normal --expire-time=120000
       notified=1
     elif [[ "$battery0_capacity" -le "$battery_critical_threshold" ]]; then
       temp_time=$((backup_duration * 1000))
-      notify-send "Battery almost empty, system will be turned off in $backup_duration sec(s)" 'Backup Data or Plug In to Recharge' --icon=battery-empty --urgency=critical --expire-time=$temp_time
+      notify-send "Battery almost empty, system will be turned off in $backup_duration sec(s)" 'Backup Data or Plug In to Recharge' --icon=/usr/share/icons/gnome/32x32/status/battery-empty.png --urgency=critical --expire-time=$temp_time
       notified=1
 
       sleep $backup_duration
