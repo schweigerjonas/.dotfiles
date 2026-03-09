@@ -202,7 +202,7 @@ bar {
       -t iceberg-contrast
 
     # remove system tray icons
-    tray_output none
+    # tray_output none
 
     position top
 }
