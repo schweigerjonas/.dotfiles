@@ -119,6 +119,9 @@ export PATH="$PATH:/var/lib/flatpak/exports/bin"
 # Golang installation
 export PATH="$PATH:/usr/local/go/bin"
 
+# Go binaries
+export PATH="$PATH:$HOME/go/bin"
+
 # Path for custom symlinks and installations
 export PATH="$HOME/.local/bin:$PATH"
 
