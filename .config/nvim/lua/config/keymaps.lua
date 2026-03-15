@@ -6,8 +6,8 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- Disable continuations
-keymap.set("n", "<Leader>o", "o<Esc>_Da", opts)
-keymap.set("n", "<Leader>O", "O<Esc>_Da", opts)
+keymap.set("n", "<leader>o", "o<Esc>_Da", opts)
+keymap.set("n", "<leader>O", "O<Esc>_Da", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
