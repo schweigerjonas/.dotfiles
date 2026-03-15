@@ -12,3 +12,6 @@ keymap.set("n", "<leader>O", "O<Esc>_Da", opts)
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
 keymap.set("n", "sv", ":vsplit<Return>", opts)
+
+-- LSP renaming
+keymap.set("n", "<leader>rn", ":IncRename ", opts)
