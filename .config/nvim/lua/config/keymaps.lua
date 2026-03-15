@@ -15,3 +15,10 @@ keymap.set("n", "sv", ":vsplit<Return>", opts)
 
 -- LSP renaming
 keymap.set("n", "<leader>rn", ":IncRename ", opts)
+
+-- Open Oil file explorer
+keymap.set("n", "<leader>pd", "<CMD>Oil<CR>", {
+  noremap = true,
+  silent = true,
+  desc = "Open parent directory",
+})
