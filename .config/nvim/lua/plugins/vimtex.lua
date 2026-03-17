@@ -1,12 +1,12 @@
 return {
   {
     "lervag/vimtex",
-    ft = { "tex", "bib" },
+    lazy = false,
     init = function()
       vim.g.vimtex_imaps_enabled = 0 -- i.e., disable global vimtex settings
 
       vim.g.vimtex_view_method = "zathura"
-      vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
+      -- vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
 
       vim.g.vimtex_quickfix_open_on_warning = 0 --  don't open quickfix if there are only warnings
       vim.g.vimtex_quickfix_ignore_filters = {
