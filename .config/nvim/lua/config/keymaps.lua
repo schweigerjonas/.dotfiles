@@ -22,3 +22,7 @@ keymap.set("n", "<leader>pd", "<CMD>Oil<CR>", {
   silent = true,
   desc = "Open parent directory",
 })
+
+-- Center search results when moving between them
+keymap.set("n", "n", "nzzzv", { desc = "Next search result centered" })
+keymap.set("n", "N", "Nzzzv", { desc = "Previous search result centered" })
