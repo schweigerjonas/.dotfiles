@@ -7,6 +7,7 @@ return {
         "svelte-language-server",
         "vue-language-server",
         "typescript-language-server",
+        "vtsls",
         "pyright",
         "css-lsp",
         "tailwindcss-language-server",
