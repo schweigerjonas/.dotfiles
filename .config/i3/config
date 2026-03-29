@@ -198,13 +198,12 @@ bindsym $mod+r mode "resize"
 bar {
     status_command python3 ~/bumblebee-status/bumblebee-status \
       -m battery cpu memory network pulseout datetime \
-      -p datetime.format="%a %d, %b %H:%M" \
-      -t iceberg-contrast
+      -p datetime.format="%a %d, %b %H:%M"
 
     # remove system tray icons
     # tray_output none
 
-    position top
+    position bottom
 }
 
 # Add gaps between windows/containers
