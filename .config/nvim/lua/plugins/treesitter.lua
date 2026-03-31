@@ -17,6 +17,7 @@ return {
         "vue",
         "gitignore",
         "markdown",
+        "typst",
       },
     },
   },
