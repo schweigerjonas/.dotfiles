@@ -15,6 +15,8 @@ return {
         "gopls",
         "tinymist",
         "typstyle",
+        "markdownlint-cli2",
+        "markdown-toc",
       })
     end,
   },
@@ -45,6 +47,7 @@ return {
             formatterMode = "typstyle",
           },
         },
+        marksman = {},
       },
     },
   },
