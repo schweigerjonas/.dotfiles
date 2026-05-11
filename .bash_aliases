@@ -11,3 +11,9 @@ alias ard="arduino-cli"
 # Pomodoro script
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
+
+# Move up multiple directories
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
