@@ -5,7 +5,7 @@
     fg:           #EFEFEF;
     blue:         #84a0c6;
     grey:         #6b7089;
-    
+
     background-color: transparent;
     text-color:       @fg;
     font:            "JetBrainsMono Nerd Font 12";
