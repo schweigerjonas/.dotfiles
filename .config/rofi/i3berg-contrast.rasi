@@ -1,9 +1,8 @@
 * {
-    /* Iceberg Palette */
     bg:           #161821;
-    bg-alt:       #161922;
+    bg-alt:       #1E2132;
     fg:           #EFEFEF;
-    blue:         #84a0c6;
+    blue:         #84A0C6;
     grey:         #6b7089;
 
     background-color: transparent;
@@ -14,11 +13,11 @@
 window {
     width:            600px;
     background-color: @bg;
-    border-color:     @blue; 
+    border-color:     @blue;
 }
 
 mainbox {
-    children: [ inputbar, listview ];
+    children: [ inputbar, listview, mode-switcher ];
     spacing: 0px;
 }
 
@@ -65,3 +64,18 @@ element selected {
 element-text {
     vertical-align: 0.5;
 }
+
+/* --- Mode Switcher --- */
+mode-switcher {
+    children: [ button ];
+}
+
+button {
+    text-color: @blue;
+    background-color: @bg;
+}
+
+button selected.normal {
+    background-color: @bg-alt;
+}
+

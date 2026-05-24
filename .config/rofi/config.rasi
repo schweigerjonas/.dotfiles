@@ -10,4 +10,4 @@ configuration {
   sidebar-mode: true;
 }
 
-// @theme "iceberg-contrast"
+@theme "i3berg-contrast"
