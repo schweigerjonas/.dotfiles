@@ -205,7 +205,7 @@ bar {
 }
 
 # Add gaps between windows/containers
-gaps inner 5px
+gaps inner 7px
 
 # Autostart apps on specific workspaces
 exec --no-startup-id i3-msg "workspace $ws1; exec flatpak run app.zen_browser.zen"
