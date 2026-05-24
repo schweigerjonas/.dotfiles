@@ -207,19 +207,9 @@ bar {
 # Add gaps between windows/containers
 gaps inner 5px
 
-# Assign applications to workspaces
-# assign [class="^firefox"] $ws1
-# assign [class="^Gnome-terminal"] $ws2
-# assign [class="^todoist"] $ws8
-
 # Autostart apps on specific workspaces
-# exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
 exec --no-startup-id i3-msg "workspace $ws1; exec flatpak run app.zen_browser.zen"
-# exec --no-startup-id i3-msg "workspace $ws2; exec gnome-terminal"
 exec --no-startup-id i3-msg "workspace $ws2; exec kitty"
 
 # Automatically apply monitor settings on refresh
 exec_always --no-startup-id ~/.config/i3/scripts/monitor
-
-# Load wallpaper when on i3 startup 
-exec_always --no-startup-id nitrogen --restore
