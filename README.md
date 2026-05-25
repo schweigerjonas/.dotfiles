@@ -7,12 +7,14 @@ Various configuration files.
 ### Contents
 
 - [i3](https://i3wm.org/) window manager config
+- [i3status](https://i3wm.org/docs/i3status.html) status bar for window manager config
 - vim ([Neovim](https://neovim.io)) config
 - [kitty](https://github.com/kovidgoyal/kitty) config
 - [tmux](https://github.com/tmux/tmux) config
 - [rofi](https://github.com/davatorium/rofi) config
 - utility scripts
 - [keyd](https://github.com/rvaiya/keyd) keyboard remappings
+- [zathura](https://pwmt.org/projects/zathura/) config
 
 ### Dependencies
 
