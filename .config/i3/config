@@ -211,8 +211,5 @@ gaps inner 7px
 exec --no-startup-id i3-msg "workspace $ws1; exec flatpak run app.zen_browser.zen"
 exec --no-startup-id i3-msg "workspace $ws2; exec kitty"
 
-# Autostart apps
-exec --no-startup-id xfce4-power-manager
-
 # Automatically apply monitor settings on refresh
 exec_always --no-startup-id ~/.config/i3/scripts/monitor
