@@ -18,6 +18,7 @@ return {
         "markdownlint-cli2",
         "markdown-toc",
         "hadolint",
+        "prettier",
       })
     end,
   },
