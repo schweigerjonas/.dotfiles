@@ -37,13 +37,19 @@ Various configuration files.
 
 Clone the repository:
 
-```bash
+```sh
 git clone git@github.com:schweigerjonas/.dotfiles.git
 cd .dotfiles
 ```
 
 Create symlinks using [GNU Stow](https://www.gnu.org/software/stow/):
 
-```bash
+```sh
 stow --target="$HOME" .
+```
+
+Delete symlinks if necessary:
+
+```sh
+stow --target="$HOME" -D .
 ```
