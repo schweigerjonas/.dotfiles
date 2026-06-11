@@ -5,6 +5,8 @@ DIRS=(
   "$HOME/Documents/notes"
   "$HOME/dev"
   "$HOME/repos"
+  "$HOME/repos/.dotfiles"
+  "$HOME/repos/.dotfiles/.config"
   "$HOME/"
 )
 
