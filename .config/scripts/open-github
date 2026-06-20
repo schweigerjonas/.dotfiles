@@ -3,7 +3,8 @@
 cd "$(tmux display-message -p "#{pane_current_path}")"
 url=$(git remote get-url origin)
 
-if [[ $url == *github.com* ]]; then
+# no TLD for gitlab to include self-managed instances
+if [[ $url == *github.com* || $url == *gitlab* ]]; then
   # ssh url
   if [[ $url == git@* ]]; then
     url="${url#git@}"
