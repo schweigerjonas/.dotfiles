@@ -7,6 +7,7 @@ return {
         replace_netrw = false,
       },
       picker = {
+        hidden = true,
         sources = {
           files = {
             hidden = true,
