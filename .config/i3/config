@@ -198,8 +198,8 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status
 
-    # remove system tray icons
-    # tray_output none
+    # remove system tray icons (e.g. bluetooth, update manager)
+    tray_output none
 
     position bottom
 }
