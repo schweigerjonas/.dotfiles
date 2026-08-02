@@ -15,6 +15,7 @@ Various configuration files.
 - utility scripts
 - [keyd](https://github.com/rvaiya/keyd) keyboard remappings
 - [zathura](https://pwmt.org/projects/zathura/) config
+- [rclone](https://github.com/rclone/rclone) config example
 
 ### Dependencies
 

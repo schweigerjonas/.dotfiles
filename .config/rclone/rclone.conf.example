@@ -1,0 +1,9 @@
+[storagebox]
+type = sftp
+host = u123456.your-storagebox.de
+user = u123456
+port = 23
+key_file = ~/.ssh/id_ed25519
+known_hosts_file = ~/.ssh/known_hosts
+shell_type = unix
+
