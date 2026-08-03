@@ -2,6 +2,7 @@ return {
   {
     "lervag/vimtex",
     lazy = false,
+    tag = "v2.17",
     config = function()
       -- store window ID when neovim starts
       if vim.g.vim_window_id == nil then
